@@ -9,7 +9,7 @@
 # Get wacom device list
 SaveIFS="$IFS"
 IFS=$'\n'
-devices=($(xsetwacom list | awk -F  "\t" '/1/ {print $1}'))
+devices=($(xsetwacom list | awk -F  "\t" '{print $1}'))
 IFS="$SaveIFS"
 
 # Find the line in "xrandr -q --verbose" output that contains current screen orientation and "strip" out current orientation.
